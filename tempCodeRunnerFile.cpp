@@ -1,23 +1,25 @@
 #include <iostream>
 using namespace std;
 
-struct MyStruct {
-    int x; // public by default
-    void show() { cout << "Struct x = " << x << endl; }
+class Animal {
+public:
+    void sound() {
+        cout << "Animals make sounds" << endl;
+    }
 };
 
-class MyClass {
-    int y; // private by default
+class Dog : public Animal {
 public:
-    MyClass(int val) : y(val) {}
-    void show() { cout << "Class y = " << y << endl; }
+    void sound() {
+        cout << "Dog barks" << endl;
+    }
 };
 
 int main() {
-    MyStruct s{10};
-    s.show();
+    Animal a;
+    Dog d;
 
-    MyClass c(20);
-    c.show();
+    a.sound();
+    d.sound();
     return 0;
 }
