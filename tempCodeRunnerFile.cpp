@@ -1,14 +1,23 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-template<typename T>//T is a placeholder for any data type
-T findMax( T a, T b){//function template to find te maximum of two value
-return (a>b)?a:b;//returns a if a is greater than b, otherwise returns b
+template <typename T>
+void swapValues(T &a, T &b) {
+    T temp = a;
+    a = b;
+    b = temp;
 }
 
-int main(){
-    cout<<findMax(10,20)  <<endl;//int
-    cout<<findMax(3.14,2.71)  <<endl;//double
-    cout<<findMax('a','z')  <<endl;//char
-    cout<<findMax(100L,200L)  <<endl;//long
+int main() {
+    int x = 5, y = 10;
+    swapValues(x, y);
+    cout << "int:    x=" << x << " y=" << y << endl;
+
+    double p = 1.1, q = 9.9;
+    swapValues(p, q);
+    cout << "double: p=" << p << " q=" << q << endl;
+
+    string s1="Hello", s2="World";
+    swapValues(s1, s2);
+    cout << "string: " << s1 << " " << s2 << endl;
 }
