@@ -1,0 +1,1 @@
+//a class defines what an object should look like , and an obect is created based on that class.
